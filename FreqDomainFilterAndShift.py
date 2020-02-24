@@ -55,7 +55,7 @@ a_fft_submov = np.multiply(a_fft, np.exp(-2j*np.pi*(uf*row_shift + vf*col_shift)
 a_fft_submov = np.fft.ifftshift(a_fft_submov)
 
 
-a_submoved = np.fft.ifft2(a_fft_submov).real
+a_submoved = np.abs(np.fft.ifft2(a_fft_submov))
 plt.imshow(a_submoved, cmap='gray',)
 
 
